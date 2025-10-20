@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ideal Dental Solutions | Sample Landing Preview</title>
+  <meta name="description" content="Compassionate, modern dental care. Implants, cosmetic, restorative, periodontal and preventive dentistry. Flexible financing and same-day appointments.">
+  <meta property="og:title" content="Ideal Dental Solutions | Book Your Visit">
+  <meta property="og:description" content="Implants, cosmetic and general dentistry. Same-day appointments. Book online.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root{--ids-bg:#fff;--ids-txt:#000000;--ids-muted:#5a6a78;--ids-accent:#FB7F2A;--ids-accent-dark:#E56F1E;--ids-cta:#FB7F2A;--ids-cta-dark:#E56F1E;--ids-warn:#f59e0b;--ids-border:#e6edf2;--ids-alt-bg:#fff6ef}
+    html,body{margin:0;padding:0;background:var(--ids-bg);color:var(--ids-txt);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Noto Sans,Apple Color Emoji,Segoe UI Emoji}
+    a{color:var(--ids-accent-dark);text-decoration:none}a:hover{text-decoration:underline}
+    #ids-landing{--maxw:1200px}
+    .ids-container{width:min(var(--maxw),94vw);margin:0 auto}
+    .ids-row{display:flex;gap:28px;flex-wrap:wrap}
+    .ids-col{flex:1 1 300px}
+    .ids-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#eff6ff;color:#0b6ea4;font-weight:600;font-size:14px}
+    .ids-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:10px;font-weight:700;border:0;cursor:pointer;transition:all .15s ease}
+    .ids-btn-primary{background:var(--ids-cta);color:#fff}.ids-btn-primary:hover{background:var(--ids-cta-dark)}
+    .ids-btn-outline{background:#fff;color:var(--ids-accent-dark);border:2px solid var(--ids-accent)}
+    .ids-btn-outline:hover{background:#f0f9ff}
+    .ids-tag{display:inline-block;font-weight:700;font-size:12px;color:#065f46;background:#d1fae5;border:1px solid #10b981;padding:4px 8px;border-radius:999px}
+    .ids-topbar{background:#0b1721;color:#cbe5ff;font-size:13px;padding:8px 0}
+    .ids-topbar .ids-container{display:flex;align-items:center;justify-content:space-between}
+    .ids-header{background:#fff;border-bottom:1px solid var(--ids-border);position:sticky;top:0;z-index:50}
+    .ids-header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .ids-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:.2px}
+    .ids-hero{background:linear-gradient(180deg,#f8fbff 0%,#ffffff 70%);padding:36px 0 20px}
+    .ids-hero h1{font-size:clamp(28px,4.8vw,44px);line-height:1.1;margin:12px 0}
+    .ids-hero p.lead{font-size:clamp(16px,2.3vw,19px);color:var(--ids-muted);margin:10px 0 18px}
+    .ids-usp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0 14px}
+    .ids-usp div{display:flex;align-items:center;gap:8px;font-weight:600;color:#0b6ea4;background:#eff6ff;border:1px solid #dbeafe;padding:8px 10px;border-radius:8px}
+    .ids-cta-wrap{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 8px}
+    .ids-disclaimer{font-size:12px;color:#6b7280}
+    /* Simplified first fold: no hero collage/logos */
+    .ids-card{background:#fff;border:1px solid var(--ids-border);border-radius:14px;box-shadow:0 1px 12px rgba(16,24,40,.06);padding:18px}
+    .ids-form h3{margin:0 0 10px}
+    .ids-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .ids-grid-1{display:grid;grid-template-columns:1fr;gap:10px}
+    .ids-input,.ids-select,.ids-textarea{width:100%;border:1px solid var(--ids-border);border-radius:10px;padding:12px;font-size:15px;background:#fff}
+    .ids-input:focus,.ids-select:focus,.ids-textarea:focus{outline:none;border-color:#93c5fd;box-shadow:0 0 0 3px #dbeafe}
+    .ids-small{font-size:12px;color:#6b7280}
+    .ids-reassure{background:#08121a;color:#d7e9ff;padding:12px 0}
+    .ids-reassure .ids-items{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+    .ids-reassure .item{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;background:#0b1721;border:1px solid #123047}
+    .ids-section{padding:28px 0}
+    .ids-section.ids-alt{background:var(--ids-alt-bg)}
+    .ids-section h2{margin:0 0 14px;font-size:clamp(22px,4vw,32px)}
+    .ids-accent{color:var(--ids-cta)}
+    .ids-services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .ids-service{border:1px solid var(--ids-border);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+    .ids-service h3{margin:0;font-size:18px}
+    .ids-service ul{margin:4px 0 0 18px;padding:0}
+    .ids-service-media{aspect-ratio:16/9;border-radius:10px;background:#eef2f7;border:1px dashed #c7d2fe;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:12px;margin-bottom:10px;overflow:hidden}
+    .ids-service-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .ids-media-bar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+    .ids-media-ph{border:1px dashed #c7d2fe;background:#eef2f7;color:#6b7280;border-radius:12px;min-height:200px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px}
+    .ids-video-ph{position:relative}
+    .ids-video-ph::after{content:'';position:absolute;width:54px;height:54px;border-radius:50%;background:rgba(0,0,0,.35);top:50%;left:50%;transform:translate(-50%,-50%)}
+    .ids-video-ph::before{content:'';position:absolute;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #ffffff;top:50%;left:50%;transform:translate(-40%,-50%);z-index:1}
+    .ids-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .ids-review{border:1px solid var(--ids-border);border-radius:12px;padding:14px;background:#fcfdff}
+    .ids-faq dt{font-weight:700;cursor:pointer;padding:12px;border:1px solid var(--ids-border);border-radius:10px;margin-top:10px}
+    .ids-faq dd{margin:0 0 0 0;padding:0 12px 10px;color:#374151;display:none}
+    .ids-footer{background:#061018;color:#9fbad3;padding:20px 0;font-size:13px}
+    .ids-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:100}
+    .ids-modal{background:#fff;width:min(880px,94vw);height:min(84vh,900px);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+    .ids-modal-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--ids-border)}
+    .ids-modal-body{flex:1;overflow:auto}
+    .ids-close{background:none;border:none;font-size:20px;cursor:pointer}
+    @media (min-width:900px){.ids-hero .ids-row{align-items:center}}
+    @media (max-width:720px){.ids-usp{grid-template-columns:1fr}.ids-services{grid-template-columns:1fr}.ids-proof{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="ids-landing">
+  <div class="ids-topbar">
+    <div class="ids-container">
+      <div class="ids-badge" aria-label="Assurance">
+        <span>5-Star Patient Care</span>
+      </div>
+      <div class="ids-small">Insurance accepted • Flexible financing • Same-day options</div>
+    </div>
+  </div>
+
+  <header class="ids-header" role="banner">
+    <div class="ids-container ids-header-inner">
+      <div class="ids-logo" aria-label="Ideal Dental Solutions">
+        <div style="width:36px;height:36px;border-radius:8px;background:#eef2f7;border:1px dashed #c7d2fe"></div>
+        <span>Ideal Dental Solutions</span>
+      </div>
+      <div class="ids-phone">
+        <a href="tel:+1XXXXXXXXXX">Call: (XXX) XXX-XXXX</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="ids-hero" aria-label="Hero">
+    <div class="ids-container">
+      <div class="ids-row">
+        <div class="ids-col">
+          <span class="ids-tag">Free Consultation</span>
+          <h1>Confident Smiles Start Here — <span class="ids-accent">Implants, Cosmetic & Full-Service Dentistry</span></h1>
+          <p class="lead">New patients: Free consultation. Ask about our 2 visits, 1 smile option.</p>
+
+          <div class="ids-usp" role="list">
+            <div role="listitem">✓ Same-Day Appointments</div>
+            <div role="listitem">✓ Insurance & Financing</div>
+          </div>
+
+          <div class="ids-cta-wrap">
+            <button class="ids-btn ids-btn-primary" data-ids-open-modal>Claim Free Consultation</button>
+          </div>
+          <div class="ids-disclaimer">Limited-time offer. Subject to availability.</div>
+
+          <!-- Optional hero background image can be applied to the section via CSS inline style in WP template. -->
+        </div>
+        <div class="ids-col">
+          <div class="ids-card ids-form" id="ids-form" aria-live="polite">
+            <h3>Request Your Appointment</h3>
+            <form id="leadForm" novalidate>
+              <div class="ids-grid">
+                <div>
+                  <label class="ids-small" for="lfName">Full name</label>
+                  <input class="ids-input" id="lfName" name="name" type="text" placeholder="John Doe" required>
+                </div>
+                <div>
+                  <label class="ids-small" for="lfPhone">Phone</label>
+                  <input class="ids-input" id="lfPhone" name="phone" type="tel" inputmode="tel" placeholder="(555) 555-5555" required>
+                </div>
+                <div>
+                  <label class="ids-small" for="lfEmail">Email</label>
+                  <input class="ids-input" id="lfEmail" name="email" type="email" placeholder="you@email.com" required>
+                </div>
+                <div>
+                  <label class="ids-small" for="lfService">Service</label>
+                  <select class="ids-select" id="lfService" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option>Dental Implants</option>
+                    <option>Preventive Dentistry</option>
+                    <option>Restorative Dentistry</option>
+                    <option>Cosmetic Dentistry</option>
+                    <option>Periodontal Dentistry</option>
+                    <option>Other / Not sure</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ids-grid-1">
+                <div>
+                  <label class="ids-small" for="lfNotes">Notes (optional)</label>
+                  <textarea class="ids-textarea" id="lfNotes" name="notes" rows="3" placeholder="Tell us a little about your goals"></textarea>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; margin-top:10px;">
+                <button class="ids-btn ids-btn-primary" type="submit">Request Appointment</button>
+                <button class="ids-btn ids-btn-outline" type="button" data-ids-open-modal>See Calendar</button>
+              </div>
+              <div class="ids-small">By submitting, you agree to be contacted by phone/SMS. Msg/data rates may apply.</div>
+              <div id="lfStatus" class="ids-small" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ids-reassure" aria-label="Assurances">
+    <div class="ids-container">
+      <div class="ids-items">
+        <div class="item"><a href="https://share.google/Q0Q20YEoVYd0kGYAS" target="_blank" rel="nofollow noopener" style="color:inherit;text-decoration:none;">⭐ 4.7★ on Google</a></div>
+        <div class="item"><a href="https://www.yelp.com/biz/ideal-dental-solutions-arlington" target="_blank" rel="nofollow noopener" style="color:inherit;text-decoration:none;">⭐ 4.0★ on Yelp</a></div>
+        <div class="item">🛡️ Insurance Accepted</div>
+        <div class="item">💳 Flexible Financing</div>
+        <div class="item">🕒 Same-Day Appointments</div>
+        <div class="item">🧑‍⚕️ Experienced Team</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ids-section ids-alt" aria-label="Services">
+    <div class="ids-container">
+      <h2>Comprehensive Dental <span class="ids-accent">Care</span></h2>
+      <div class="ids-services">
+        <div class="ids-service">
+          <div class="ids-service-media">Service Image (Dental Implants)</div>
+          <h3><a href="#" target="_blank" rel="noopener">Dental Implants</a></h3>
+          <p>Restore missing teeth with durable, natural-looking implants.</p>
+          <ul>
+            <li>Single, multiple, or full-arch</li>
+            <li>3D imaging and guided surgery</li>
+            <li>Sedation options available</li>
+          </ul>
+        </div>
+        <div class="ids-service">
+          <div class="ids-service-media">Service Image (Preventive)</div>
+          <h3><a href="#" target="_blank" rel="noopener">Preventive Dentistry</a></h3>
+          <p>Keep your smile healthy with routine care.</p>
+          <ul>
+            <li>Cleanings & exams</li>
+            <li>Digital X-rays</li>
+            <li>Fluoride & sealants</li>
+          </ul>
+        </div>
+        <div class="ids-service">
+          <div class="ids-service-media">Service Image (Restorative)</div>
+          <h3><a href="#" target="_blank" rel="noopener">Restorative Dentistry</a></h3>
+          <p>Repair and protect teeth for long-term function.</p>
+          <ul>
+            <li>Fillings, crowns & bridges</li>
+            <li>Root canals</li>
+            <li>Extractions</li>
+          </ul>
+        </div>
+        <div class="ids-service">
+          <div class="ids-service-media">Service Image (Cosmetic)</div>
+          <h3><a href="#" target="_blank" rel="noopener">Cosmetic Dentistry</a></h3>
+          <p>Enhance your smile’s appearance.</p>
+          <ul>
+            <li>Whitening & veneers</li>
+            <li>Bonding & contouring</li>
+            <li>Smile makeovers</li>
+          </ul>
+        </div>
+        <div class="ids-service">
+          <div class="ids-service-media">Service Image (Periodontal)</div>
+          <h3><a href="#" target="_blank" rel="noopener">Periodontal Care</a></h3>
+          <p>Healthy gums for a healthy smile.</p>
+          <ul>
+            <li>Deep cleanings (SRP)</li>
+            <li>Maintenance therapy</li>
+            <li>Laser-assisted options</li>
+          </ul>
+        </div>
+        <div class="ids-service">
+          <div class="ids-service-media">Service Image (Emergency)</div>
+          <h3>Emergency Dentistry</h3>
+          <p>Fast relief for pain, breaks, and infections.</p>
+          <ul>
+            <li>Same-day availability</li>
+            <li>Pain management</li>
+            <li>Transparent fees</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ids-media-bar" aria-label="Media">
+        <div class="ids-media-ph">Service Image Placeholder (replace with clinic/service image)</div>
+        <div class="ids-media-ph ids-video-ph">Video Placeholder (embed testimonial/clinic explainer)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ids-section" aria-label="Reviews">
+    <div class="ids-container">
+      <h2>Patients Love Our <span class="ids-accent">Care</span></h2>
+      <div class="ids-proof">
+        <div class="ids-review">“Exceptional experience from start to finish. The team is kind, professional, and thorough.” — A.M.</div>
+        <div class="ids-review">“Got my implant without a hitch. Clear pricing and no surprises.” — J.R.</div>
+        <div class="ids-review">“I finally love my smile. Highly recommend cosmetic work here!” — S.K.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ids-section ids-alt" aria-label="FAQ">
+    <div class="ids-container">
+      <h2>Frequently Asked <span class="ids-accent">Questions</span></h2>
+      <dl class="ids-faq" id="ids-faq">
+        <dt>Do you accept my insurance?</dt>
+        <dd>We work with many major PPO insurance plans and help maximize your benefits. Call us to verify your coverage.</dd>
+        <dt>Do you offer financing?</dt>
+        <dd>Yes, flexible payment options are available for qualified patients. Ask us about current financing plans.</dd>
+        <dt>Are same-day appointments available?</dt>
+        <dd>We hold space for urgent needs. When possible, we’ll see you the same day.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="ids-section" aria-label="Location">
+    <div class="ids-container ids-card">
+      <div class="ids-row">
+        <div class="ids-col">
+          <h3>Visit <span class="ids-accent">Us</span></h3>
+          <p><strong>Address:</strong> Replace with address, City, ST ZIP</p>
+          <p><strong>Hours:</strong> Mon–Fri 8am–6pm, Sat 9am–1pm</p>
+          <div class="ids-cta-wrap">
+            <button class="ids-btn ids-btn-primary" data-ids-open-modal>Book Online</button>
+            <a class="ids-btn ids-btn-outline" href="tel:+1XXXXXXXXXX">Call Now</a>
+          </div>
+        </div>
+        <div class="ids-col">
+          <iframe title="Map" src="about:blank" style="width:100%; height:260px; border:0; border-radius:12px; background:#f3f4f6;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ids-footer">
+    <div class="ids-container">
+      <div>© 2025 Ideal Dental Solutions. All rights reserved.</div>
+      <div>Privacy • Terms • <a href="#ids-form">Appointments</a></div>
+    </div>
+  </footer>
+</div>
+
+<div class="ids-modal-backdrop" id="idsModal">
+  <div class="ids-modal" role="dialog" aria-modal="true" aria-labelledby="idsModalTitle">
+    <div class="ids-modal-header">
+      <strong id="idsModalTitle">Book Online</strong>
+      <button class="ids-close" type="button" aria-label="Close" data-ids-close-modal>×</button>
+    </div>
+    <div class="ids-modal-body">
+      <div id="idsCalendarPlaceholder" style="height:100%;display:flex;align-items:center;justify-content:center;color:#6b7280;">
+        Calendar embed goes here (replace placeholder in template).
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const $ = (s, c=document) => c.querySelector(s);
+    const $$ = (s, c=document) => Array.from(c.querySelectorAll(s));
+    const phone = $('#lfPhone');
+    if (phone) phone.addEventListener('input', () => { let v=phone.value.replace(/\D/g,'').slice(0,10); let o=v; if(v.length>6)o=`(${v.slice(0,3)}) ${v.slice(3,6)}-${v.slice(6)}`; else if(v.length>3)o=`(${v.slice(0,3)}) ${v.slice(3)}`; else if(v.length>0)o=`(${v}`; phone.value=o; });
+    const leadForm = $('#leadForm'); const lfStatus = $('#lfStatus');
+    if (leadForm) leadForm.addEventListener('submit', async (e)=>{ e.preventDefault(); lfStatus.textContent=''; const data=Object.fromEntries(new FormData(leadForm)); if(!data.name||!data.phone||!data.email||!data.service){ lfStatus.textContent='Please complete all required fields.'; return; } await new Promise(r=>setTimeout(r,600)); lfStatus.textContent='Thanks! We received your request. We will contact you shortly.'; leadForm.reset(); });
+    const modal = $('#idsModal'); const openers = $$('[data-ids-open-modal]'); const closer = $('[data-ids-close-modal]');
+    openers.forEach(b=>b.addEventListener('click',()=>{ modal.style.display='flex'; document.body.style.overflow='hidden'; }));
+    closer && closer.addEventListener('click',()=>{ modal.style.display='none'; document.body.style.overflow=''; });
+    modal && modal.addEventListener('click',(e)=>{ if(e.target===modal){ closer.click(); } });
+    $$('#ids-faq dt').forEach(dt=>{ dt.addEventListener('click',()=>{ const dd=dt.nextElementSibling; const shown=dd && dd.style.display==='block'; $$('#ids-faq dd').forEach(el=>el.style.display='none'); if(dd) dd.style.display= shown?'none':'block'; }); });
+  })();
+</script>
+
+</body>
+</html>
