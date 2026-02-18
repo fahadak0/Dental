@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideal Dental Solutions — #1 Dentists in Northern Virginia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F9F6F1;
+    --warm-white: #FEFCF9;
+    --charcoal: #1C1C1C;
+    --deep: #111111;
+    --gold: #C4A96A;
+    --gold-light: #D4BC8A;
+    --muted: #8A8074;
+    --border: #E2D9CE;
+    --section-bg: #F4EFE8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px;
+    height: 80px;
+    background: rgba(249,246,241,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; letter-spacing: 0.04em;
+    color: var(--charcoal); text-decoration: none;
+    line-height: 1.1;
+  }
+  .nav-logo span { display: block; font-size: 10px; font-family: 'Montserrat', sans-serif; letter-spacing: 0.3em; font-weight: 600; color: var(--gold); text-transform: uppercase; margin-top: 2px; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--charcoal); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600;
+    padding: 12px 28px; background: var(--charcoal); color: var(--cream);
+    text-decoration: none; border: 1px solid var(--charcoal); transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold); border-color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    height: 100vh; min-height: 700px;
+    display: flex; align-items: flex-end;
+    position: relative; overflow: hidden;
+    background: var(--deep);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0e0e0e 0%, #1a1814 40%, #0c0c0c 100%);
+  }
+  .hero-texture {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(ellipse at 70% 40%, rgba(196,169,106,0.08) 0%, transparent 60%),
+                      radial-gradient(ellipse at 20% 80%, rgba(196,169,106,0.05) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(196,169,106,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(196,169,106,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 60px 100px;
+    max-width: 900px;
+  }
+  .hero-eyebrow {
+    font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 110px);
+    font-weight: 300; line-height: 0.95;
+    color: var(--warm-white);
+    margin-bottom: 36px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    font-size: 13px; letter-spacing: 0.05em; line-height: 1.8;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px; margin-bottom: 56px;
+  }
+  .hero-actions { display: flex; gap: 20px; align-items: center; }
+  .btn-primary {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600;
+    padding: 16px 40px; background: var(--gold); color: var(--deep);
+    text-decoration: none; transition: all 0.3s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-ghost {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500;
+    padding: 16px 32px; color: rgba(255,255,255,0.6); text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-locations {
+    position: absolute; right: 60px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 32px;
+  }
+  .hero-location-item {
+    text-align: right;
+  }
+  .hero-location-item .loc-label {
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); margin-bottom: 6px;
+  }
+  .hero-location-item .loc-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 400; color: var(--warm-white);
+    margin-bottom: 4px;
+  }
+  .hero-location-item .loc-phone {
+    font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.08em;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .hero-location-item .loc-phone:hover { color: var(--gold); }
+  .hero-divider { width: 1px; height: 1px; background: rgba(196,169,106,0.3); align-self: stretch; }
+
+  /* ── MARQUEE STRIP ── */
+  .marquee-strip {
+    background: var(--charcoal); padding: 18px 0; overflow: hidden;
+    border-top: 1px solid rgba(196,169,106,0.2);
+    border-bottom: 1px solid rgba(196,169,106,0.2);
+  }
+  .marquee-track {
+    display: flex; gap: 60px; animation: marquee 30s linear infinite; white-space: nowrap;
+  }
+  .marquee-track span {
+    font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; font-weight: 500;
+    color: rgba(255,255,255,0.45);
+  }
+  .marquee-track .dot { color: var(--gold); font-size: 18px; line-height: 1; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── SERVICES ── */
+  .services { background: var(--warm-white); padding: 140px 60px; }
+  .section-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 80px; gap: 40px;
+  }
+  .section-label {
+    font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 64px); font-weight: 300; line-height: 1.05;
+    color: var(--charcoal);
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-desc {
+    font-size: 13px; line-height: 1.9; color: var(--muted);
+    max-width: 360px; flex-shrink: 0; padding-top: 24px;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px;
+  }
+  .service-card {
+    background: var(--section-bg); padding: 48px 32px;
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden; cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    text-decoration: none; color: inherit; display: block;
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold); transform: scaleX(0); transition: transform 0.3s;
+    transform-origin: left;
+  }
+  .service-card:hover { background: var(--charcoal); transform: translateY(-4px); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-card:hover .sc-num, .service-card:hover .sc-title, .service-card:hover .sc-desc { color: var(--warm-white); }
+  .service-card:hover .sc-arrow { color: var(--gold); }
+  .sc-num {
+    font-size: 11px; letter-spacing: 0.2em; color: var(--gold); font-weight: 600;
+    margin-bottom: 32px; transition: color 0.3s;
+  }
+  .sc-icon {
+    width: 40px; height: 40px; margin-bottom: 24px; opacity: 0.6;
+  }
+  .sc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; line-height: 1.2;
+    color: var(--charcoal); margin-bottom: 16px; transition: color 0.3s;
+  }
+  .sc-desc {
+    font-size: 12px; line-height: 1.8; color: var(--muted); transition: color 0.3s;
+    margin-bottom: 32px;
+  }
+  .sc-arrow { font-size: 20px; color: var(--border); transition: color 0.3s; }
+
+  /* ── ABOUT / PHILOSOPHY ── */
+  .philosophy {
+    background: var(--charcoal);
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 700px;
+  }
+  .philosophy-text {
+    padding: 120px 80px; display: flex; flex-direction: column; justify-content: center;
+  }
+  .philosophy-visual {
+    background: linear-gradient(135deg, #1a1814 0%, #0c0c0c 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .philosophy-visual-inner {
+    position: relative; text-align: center; padding: 60px;
+  }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px; font-weight: 300; color: var(--gold);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); font-weight: 500;
+  }
+  .philosophy-visual::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(196,169,106,0.08) 0%, transparent 70%);
+  }
+  .philosophy-text .section-label { color: rgba(196,169,106,0.8); }
+  .philosophy-text .section-label::before { background: rgba(196,169,106,0.8); }
+  .philosophy-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 54px); font-weight: 300; line-height: 1.1;
+    color: var(--warm-white); margin-bottom: 32px;
+  }
+  .philosophy-title em { font-style: italic; color: var(--gold-light); }
+  .philosophy-body {
+    font-size: 13px; line-height: 2; color: rgba(255,255,255,0.5);
+    margin-bottom: 48px; max-width: 420px;
+  }
+  .btn-gold {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600;
+    padding: 16px 36px; background: transparent; color: var(--gold);
+    border: 1px solid var(--gold); text-decoration: none; transition: all 0.3s; display: inline-block;
+  }
+  .btn-gold:hover { background: var(--gold); color: var(--deep); }
+
+  /* ── DOCTORS ── */
+  .doctors { background: var(--cream); padding: 140px 60px; }
+  .doctors-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 80px;
+  }
+  .doctor-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    overflow: hidden; position: relative;
+  }
+  .doctor-img-wrap {
+    aspect-ratio: 4/5; overflow: hidden;
+    background: linear-gradient(135deg, var(--section-bg) 0%, var(--border) 100%);
+    display: flex; align-items: center; justify-content: center; position: relative;
+  }
+  .doctor-img-placeholder {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px; font-weight: 300; color: var(--border);
+    text-align: center; position: relative; z-index: 1;
+  }
+  .doctor-img-placeholder::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(249,246,241,0.3) 100%);
+  }
+  .doctor-info { padding: 40px; }
+  .doctor-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 500; color: var(--charcoal); margin-bottom: 8px;
+  }
+  .doctor-title {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .doctor-bio { font-size: 12px; line-height: 1.9; color: var(--muted); }
+  .doctor-link {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 24px;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
+    color: var(--charcoal); text-decoration: none; transition: color 0.2s;
+  }
+  .doctor-link:hover { color: var(--gold); }
+  .doctor-link::after { content: '→'; }
+
+  /* ── COSMETIC FEATURES ── */
+  .cosmetic { background: var(--section-bg); padding: 140px 60px; }
+  .cosmetic-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 80px;
+  }
+  .cosmetic-item {
+    background: var(--warm-white); border: 1px solid var(--border);
+    overflow: hidden; position: relative;
+  }
+  .cosmetic-img {
+    aspect-ratio: 3/4; overflow: hidden;
+    background: var(--charcoal);
+    position: relative;
+  }
+  .cosmetic-gradient {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(28,28,28,0.9) 0%, rgba(17,17,17,0.6) 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cosmetic-icon-large {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 100px; font-weight: 300;
+    color: rgba(196,169,106,0.15);
+  }
+  .cosmetic-info { padding: 32px; }
+  .cosmetic-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 500; margin-bottom: 12px;
+  }
+  .cosmetic-desc { font-size: 12px; line-height: 1.8; color: var(--muted); }
+  .cosmetic-link {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); text-decoration: none;
+  }
+
+  /* ── BEFORE / AFTER ── */
+  .transformations { background: var(--charcoal); padding: 140px 60px; }
+  .transformations .section-label { color: var(--gold); }
+  .transformations .section-label::before { background: var(--gold); }
+  .transformations .section-title { color: var(--warm-white); }
+  .ba-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 80px;
+  }
+  .ba-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden; position: relative;
+    aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  }
+  .ba-card-inner {
+    display: grid; grid-template-columns: 1fr 1fr; height: 100%; width: 100%;
+  }
+  .ba-side {
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .ba-side.before { background: rgba(255,255,255,0.04); }
+  .ba-side.after { background: rgba(196,169,106,0.08); }
+  .ba-label {
+    position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600;
+    padding: 4px 12px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5);
+  }
+  .ba-side.after .ba-label { background: rgba(196,169,106,0.2); color: var(--gold); }
+  .ba-tooth {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px; color: rgba(255,255,255,0.08);
+  }
+  .ba-side.after .ba-tooth { color: rgba(196,169,106,0.15); }
+  .ba-divider {
+    position: absolute; top: 0; left: 50%; width: 1px; height: 100%;
+    background: rgba(196,169,106,0.3);
+  }
+  .view-all-wrap { text-align: center; margin-top: 60px; }
+
+  /* ── PILLARS ── */
+  .pillars { background: var(--cream); padding: 140px 60px; }
+  .pillars-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 80px;
+  }
+  .pillar-item {
+    padding: 56px 40px; background: var(--warm-white); border: 1px solid var(--border);
+    position: relative;
+  }
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px; font-weight: 300; line-height: 1;
+    color: var(--border); position: absolute; top: 24px; right: 32px;
+    pointer-events: none; user-select: none;
+  }
+  .pillar-icon-ring {
+    width: 56px; height: 56px; border: 1px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 32px; color: var(--gold);
+  }
+  .pillar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 500; margin-bottom: 16px;
+  }
+  .pillar-desc { font-size: 12px; line-height: 1.9; color: var(--muted); }
+
+  /* ── LOCATIONS ── */
+  .locations-section { background: var(--section-bg); padding: 140px 60px; }
+  .locations-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 80px;
+  }
+  .location-card {
+    background: var(--warm-white); border: 1px solid var(--border); padding: 60px;
+    position: relative; overflow: hidden;
+  }
+  .location-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+    background: var(--gold);
+  }
+  .loc-card-badge {
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .loc-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px; font-weight: 300; margin-bottom: 8px;
+  }
+  .loc-card-address {
+    font-size: 12px; line-height: 1.8; color: var(--muted); margin-bottom: 32px;
+  }
+  .loc-card-phone {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 400; color: var(--charcoal);
+    text-decoration: none; display: block; margin-bottom: 32px;
+    transition: color 0.2s;
+  }
+  .loc-card-phone:hover { color: var(--gold); }
+  .hours-title {
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    font-weight: 600; color: var(--muted); margin-bottom: 16px;
+  }
+  .hours-list { list-style: none; }
+  .hours-list li {
+    display: flex; justify-content: space-between;
+    font-size: 12px; padding: 8px 0; border-bottom: 1px solid var(--border);
+    color: var(--charcoal);
+  }
+  .hours-list li span:last-child { color: var(--muted); }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--deep); padding: 120px 60px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(196,169,106,0.12) 0%, transparent 60%);
+  }
+  .cta-banner-eyebrow {
+    font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); margin-bottom: 28px;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+  }
+  .cta-banner-eyebrow::before, .cta-banner-eyebrow::after {
+    content: ''; display: block; width: 48px; height: 1px; background: rgba(196,169,106,0.4);
+  }
+  .cta-banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 86px); font-weight: 300; color: var(--warm-white);
+    margin-bottom: 24px; line-height: 1;
+    position: relative;
+  }
+  .cta-banner-title em { font-style: italic; color: var(--gold-light); }
+  .cta-banner-sub {
+    font-size: 13px; color: rgba(255,255,255,0.4); max-width: 480px;
+    margin: 0 auto 56px; line-height: 1.8;
+  }
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal); padding: 80px 60px 40px;
+    border-top: 1px solid rgba(196,169,106,0.15);
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px;
+  }
+  .footer-brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 400; color: var(--warm-white); margin-bottom: 4px;
+  }
+  .footer-brand-sub {
+    font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 24px;
+  }
+  .footer-tagline { font-size: 12px; line-height: 1.8; color: rgba(255,255,255,0.35); max-width: 280px; }
+  .footer-col-title {
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600;
+    color: rgba(255,255,255,0.4); margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links a {
+    font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
+  .footer-legal { display: flex; gap: 24px; }
+  .footer-legal a { font-size: 11px; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .cosmetic-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-locations { display: none; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 24px 80px; }
+    .services, .doctors, .cosmetic, .transformations, .pillars, .locations-section, .cta-banner { padding: 80px 24px; }
+    footer { padding: 60px 24px 32px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .doctors-grid { grid-template-columns: 1fr; }
+    .cosmetic-grid { grid-template-columns: 1fr; }
+    .ba-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .locations-grid { grid-template-columns: 1fr; }
+    .philosophy { grid-template-columns: 1fr; }
+    .philosophy-text { padding: 80px 32px; }
+    .philosophy-visual { min-height: 400px; }
+    .section-header { flex-direction: column; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Ideal Dental Solutions<span>Northern Virginia</span></a>
+  <ul class="nav-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Our Doctors</a></li>
+    <li><a href="#">Patient Resources</a></li>
+    <li><a href="#">Locations</a></li>
+  </ul>
+  <a class="nav-cta" href="#">Schedule Appointment</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Northern Virginia's Premier Dental Care</div>
+    <h1>Your Smile,<br><em>Elevated</em></h1>
+    <p class="hero-sub">Where clinical excellence meets artistic precision. Serving McLean and Arlington with over 50 years of combined expertise in cosmetic, restorative, and comprehensive dental care.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#">Schedule a Consultation</a>
+      <a class="btn-ghost" href="#">Explore Our Services</a>
+    </div>
+  </div>
+  <div class="hero-locations">
+    <div class="hero-location-item">
+      <div class="loc-label">Location 01</div>
+      <div class="loc-name">McLean</div>
+      <a class="loc-phone" href="tel:7034420442">(703) 442-0442</a>
+    </div>
+    <div class="hero-location-item">
+      <div class="loc-label">Location 02</div>
+      <div class="loc-name">Arlington</div>
+      <a class="loc-phone" href="tel:7035280800">(703) 528-0800</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>Cosmetic Dentistry</span><span class="dot">·</span>
+    <span>Dental Implants</span><span class="dot">·</span>
+    <span>Porcelain Veneers</span><span class="dot">·</span>
+    <span>Teeth Whitening</span><span class="dot">·</span>
+    <span>Invisalign</span><span class="dot">·</span>
+    <span>Periodontics</span><span class="dot">·</span>
+    <span>Restorative Care</span><span class="dot">·</span>
+    <span>Preventive Dentistry</span><span class="dot">·</span>
+    <span>Dental Bonding</span><span class="dot">·</span>
+    <span>TMJ Treatments</span><span class="dot">·</span>
+    <!-- Repeat for seamless loop -->
+    <span>Cosmetic Dentistry</span><span class="dot">·</span>
+    <span>Dental Implants</span><span class="dot">·</span>
+    <span>Porcelain Veneers</span><span class="dot">·</span>
+    <span>Teeth Whitening</span><span class="dot">·</span>
+    <span>Invisalign</span><span class="dot">·</span>
+    <span>Periodontics</span><span class="dot">·</span>
+    <span>Restorative Care</span><span class="dot">·</span>
+    <span>Preventive Dentistry</span><span class="dot">·</span>
+    <span>Dental Bonding</span><span class="dot">·</span>
+    <span>TMJ Treatments</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Our Expertise</div>
+      <h2 class="section-title">Comprehensive Care<br>for Every <em>Smile</em></h2>
+    </div>
+    <p class="section-desc">Our team of dental specialists collaborates on every case, bringing collective knowledge to create a treatment plan precisely tailored to you.</p>
+  </div>
+  <div class="services-grid">
+    <a class="service-card reveal" href="#">
+      <div class="sc-num">01</div>
+      <div class="sc-title">Cosmetic Dentistry</div>
+      <p class="sc-desc">Teeth whitening, veneers, bonding, and complete smile makeovers designed to enhance your natural beauty.</p>
+      <div class="sc-arrow">→</div>
+    </a>
+    <a class="service-card reveal reveal-delay-1" href="#">
+      <div class="sc-num">02</div>
+      <div class="sc-title">Dental Implants</div>
+      <p class="sc-desc">Permanent, natural-looking tooth replacement — from single implants to full arch reconstructions.</p>
+      <div class="sc-arrow">→</div>
+    </a>
+    <a class="service-card reveal reveal-delay-2" href="#">
+      <div class="sc-num">03</div>
+      <div class="sc-title">Periodontal Care</div>
+      <p class="sc-desc">Advanced gum disease treatment, laser therapy, crown lengthening, and gum graft surgery.</p>
+      <div class="sc-arrow">→</div>
+    </a>
+    <a class="service-card reveal reveal-delay-3" href="#">
+      <div class="sc-num">04</div>
+      <div class="sc-title">Restorative Dentistry</div>
+      <p class="sc-desc">Fillings, crowns, bridges, dentures, root canal therapy, and TMJ treatment to restore full function.</p>
+      <div class="sc-arrow">→</div>
+    </a>
+    <a class="service-card reveal reveal-delay-4" href="#">
+      <div class="sc-num">05</div>
+      <div class="sc-title">Preventive Dentistry</div>
+      <p class="sc-desc">Routine exams, professional cleanings, sealants, and proactive care to protect your long-term health.</p>
+      <div class="sc-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-text">
+    <div class="section-label reveal">Our Philosophy</div>
+    <h2 class="philosophy-title reveal reveal-delay-1">Setting the Standard<br>in Dental <em>Excellence</em></h2>
+    <p class="philosophy-body reveal reveal-delay-2">At Ideal Dental Solutions, we believe exceptional dental care is both a science and an art. Our team works collaboratively on every patient case — leveraging over 50 years of combined expertise to craft treatment plans as individual as you are.</p>
+    <a class="btn-gold reveal reveal-delay-3" href="#">Meet Our Team</a>
+  </div>
+  <div class="philosophy-visual">
+    <div class="philosophy-visual-inner">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Years Combined<br>Experience</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Expert<br>Doctors</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Convenient<br>Locations</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Beautiful<br>Smiles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED COSMETIC -->
+<section class="cosmetic">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Featured Treatments</div>
+      <h2 class="section-title">Cosmetic Dentistry<br><em>Reimagined</em></h2>
+    </div>
+    <p class="section-desc">Our signature cosmetic treatments are crafted with precision, artistry, and a deep understanding of what makes each smile unique.</p>
+  </div>
+  <div class="cosmetic-grid">
+    <div class="cosmetic-item reveal">
+      <div class="cosmetic-img">
+        <div class="cosmetic-gradient">
+          <div class="cosmetic-icon-large">V</div>
+        </div>
+      </div>
+      <div class="cosmetic-info">
+        <div class="cosmetic-title">Porcelain Veneers</div>
+        <p class="cosmetic-desc">Ultra-thin custom-crafted shells that perfect color, shape, and symmetry for a transformative result.</p>
+        <a class="cosmetic-link" href="#">Explore →</a>
+      </div>
+    </div>
+    <div class="cosmetic-item reveal reveal-delay-1">
+      <div class="cosmetic-img">
+        <div class="cosmetic-gradient">
+          <div class="cosmetic-icon-large">W</div>
+        </div>
+      </div>
+      <div class="cosmetic-info">
+        <div class="cosmetic-title">Teeth Whitening</div>
+        <p class="cosmetic-desc">Professional-grade in-office and take-home treatments for dramatically brighter results.</p>
+        <a class="cosmetic-link" href="#">Explore →</a>
+      </div>
+    </div>
+    <div class="cosmetic-item reveal reveal-delay-2">
+      <div class="cosmetic-img">
+        <div class="cosmetic-gradient">
+          <div class="cosmetic-icon-large">I</div>
+        </div>
+      </div>
+      <div class="cosmetic-info">
+        <div class="cosmetic-title">Invisalign</div>
+        <p class="cosmetic-desc">Virtually invisible clear aligners that discreetly straighten your smile with comfort and precision.</p>
+        <a class="cosmetic-link" href="#">Explore →</a>
+      </div>
+    </div>
+    <div class="cosmetic-item reveal reveal-delay-3">
+      <div class="cosmetic-img">
+        <div class="cosmetic-gradient">
+          <div class="cosmetic-icon-large">B</div>
+        </div>
+      </div>
+      <div class="cosmetic-info">
+        <div class="cosmetic-title">Dental Bonding</div>
+        <p class="cosmetic-desc">A seamless, painless solution for chips, cracks, and gaps using tooth-colored composite resin.</p>
+        <a class="cosmetic-link" href="#">Explore →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section class="doctors">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Our Doctors</div>
+      <h2 class="section-title">World-Class<br>Expertise, <em>Locally</em></h2>
+    </div>
+    <p class="section-desc">Our distinguished team brings international training, decades of experience, and a genuine passion for transforming lives through exceptional dental care.</p>
+  </div>
+  <div class="doctors-grid">
+    <div class="doctor-card reveal">
+      <div class="doctor-img-wrap">
+        <div class="doctor-img-placeholder">Dr. A</div>
+      </div>
+      <div class="doctor-info">
+        <div class="doctor-title">Prosthodontist — Georgetown University</div>
+        <div class="doctor-name">Dr. Mehdi Adili</div>
+        <p class="doctor-bio">A specialist in prosthodontics with over 30 years of clinical experience, Dr. Adili completed advanced training in Restorative and TMJ Disorders. He is passionate about transforming challenging cosmetic problems into beautiful smiles.</p>
+        <a class="doctor-link" href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal reveal-delay-1">
+      <div class="doctor-img-wrap">
+        <div class="doctor-img-placeholder">Dr. S</div>
+      </div>
+      <div class="doctor-info">
+        <div class="doctor-title">DDS — Karolinska Institute, Sweden</div>
+        <div class="doctor-name">Dr. Saman Sepahi</div>
+        <p class="doctor-bio">Dr. Sepahi earned his DDS from the Karolinska Institute in Stockholm and was a founding financial advisor for Dentists Without Borders, setting up dental care projects across Africa.</p>
+        <a class="doctor-link" href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal reveal-delay-2">
+      <div class="doctor-img-wrap">
+        <div class="doctor-img-placeholder">Dr. H</div>
+      </div>
+      <div class="doctor-info">
+        <div class="doctor-title">DDS — Virginia Commonwealth University</div>
+        <div class="doctor-name">Dr. Dilnoza Hojaeva</div>
+        <p class="doctor-bio">Originally from Uzbekistan, Dr. Hojaeva earned her dental degree at the Advanced Standing Program for Internationally Trained Dentists at VCU School of Dentistry.</p>
+        <a class="doctor-link" href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="transformations">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Real Results</div>
+      <h2 class="section-title" style="color:var(--warm-white)">Before &amp; After<br><em>Transformations</em></h2>
+    </div>
+    <p class="section-desc" style="color:rgba(255,255,255,0.4)">Witness the remarkable results of our treatments. Each transformation reflects our unwavering commitment to excellence in dental care.</p>
+  </div>
+  <div class="ba-grid">
+    <div class="ba-card reveal">
+      <div class="ba-card-inner">
+        <div class="ba-side before"><span class="ba-label">Before</span><span class="ba-tooth">⬤</span></div>
+        <div class="ba-side after"><span class="ba-label">After</span><span class="ba-tooth">⬤</span></div>
+      </div>
+      <div class="ba-divider"></div>
+    </div>
+    <div class="ba-card reveal reveal-delay-1">
+      <div class="ba-card-inner">
+        <div class="ba-side before"><span class="ba-label">Before</span><span class="ba-tooth">⬤</span></div>
+        <div class="ba-side after"><span class="ba-label">After</span><span class="ba-tooth">⬤</span></div>
+      </div>
+      <div class="ba-divider"></div>
+    </div>
+    <div class="ba-card reveal reveal-delay-2">
+      <div class="ba-card-inner">
+        <div class="ba-side before"><span class="ba-label">Before</span><span class="ba-tooth">⬤</span></div>
+        <div class="ba-side after"><span class="ba-label">After</span><span class="ba-tooth">⬤</span></div>
+      </div>
+      <div class="ba-divider"></div>
+    </div>
+  </div>
+  <div class="view-all-wrap reveal">
+    <a class="btn-gold" href="#" style="margin-top:20px">View All Transformations</a>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">The Ideal<br><em>Difference</em></h2>
+    </div>
+    <p class="section-desc">Every aspect of your experience at Ideal Dental Solutions is designed with one goal: delivering exceptional care in an environment where you feel truly valued.</p>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar-item reveal">
+      <div class="pillar-num">01</div>
+      <div class="pillar-icon-ring">✦</div>
+      <div class="pillar-title">50+ Years of Combined Experience</div>
+      <p class="pillar-desc">Our expert team brings decades of collective knowledge, ensuring you receive the most sophisticated care available.</p>
+    </div>
+    <div class="pillar-item reveal reveal-delay-1">
+      <div class="pillar-num">02</div>
+      <div class="pillar-icon-ring">◈</div>
+      <div class="pillar-title">Two Convenient Locations</div>
+      <p class="pillar-desc">McLean and Arlington offices designed for your comfort and convenience, with extended hours to fit your schedule.</p>
+    </div>
+    <div class="pillar-item reveal reveal-delay-2">
+      <div class="pillar-num">03</div>
+      <div class="pillar-icon-ring">⬡</div>
+      <div class="pillar-title">Advanced Technology</div>
+      <p class="pillar-desc">The latest in dental technology for precise, efficient, and effective treatments — delivering the highest standard of care.</p>
+    </div>
+    <div class="pillar-item reveal reveal-delay-3">
+      <div class="pillar-num">04</div>
+      <div class="pillar-icon-ring">◉</div>
+      <div class="pillar-title">Personalized Approach</div>
+      <p class="pillar-desc">We take time to understand your goals and concerns, crafting a customized treatment plan specifically for you.</p>
+    </div>
+    <div class="pillar-item reveal reveal-delay-4">
+      <div class="pillar-num">05</div>
+      <div class="pillar-icon-ring">✧</div>
+      <div class="pillar-title">Beautiful Environments</div>
+      <p class="pillar-desc">Modern, welcoming offices designed to put you at ease — because your comfort matters from the moment you arrive.</p>
+    </div>
+    <div class="pillar-item reveal reveal-delay-5">
+      <div class="pillar-num">06</div>
+      <div class="pillar-icon-ring">◇</div>
+      <div class="pillar-title">Insurance Accepted</div>
+      <p class="pillar-desc">We accept a wide range of insurance plans and work with you to maximize your benefits and minimize out-of-pocket costs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations-section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Two Locations,<br>One <em>Standard</em></h2>
+    </div>
+    <p class="section-desc">Both of our Northern Virginia offices provide the same exceptional level of care, staffed by our expert team of dental professionals.</p>
+  </div>
+  <div class="locations-grid">
+    <div class="location-card reveal">
+      <div class="loc-card-badge">Location 01 — McLean, VA</div>
+      <div class="loc-card-name">McLean</div>
+      <p class="loc-card-address">8280 Greensboro Drive, Unit 105<br>McLean, VA 22102</p>
+      <a class="loc-card-phone" href="tel:7034420442">(703) 442-0442</a>
+      <div class="hours-title">Office Hours</div>
+      <ul class="hours-list">
+        <li><span>Mon – Thu</span><span>9:00 AM – 5:00 PM</span></li>
+        <li><span>Friday</span><span>8:30 AM – 3:00 PM</span></li>
+        <li><span>Every Other Sat</span><span>8:00 AM – 2:00 PM</span></li>
+        <li><span>Sunday</span><span>Closed</span></li>
+      </ul>
+    </div>
+    <div class="location-card reveal reveal-delay-1">
+      <div class="loc-card-badge">Location 02 — Arlington, VA</div>
+      <div class="loc-card-name">Arlington</div>
+      <p class="loc-card-address">1920 Clarendon Blvd.<br>Arlington, VA 22201</p>
+      <a class="loc-card-phone" href="tel:7035280800">(703) 528-0800</a>
+      <div class="hours-title">Office Hours</div>
+      <ul class="hours-list">
+        <li><span>Mon, Tue, Thu</span><span>12:00 PM – 7:30 PM</span></li>
+        <li><span>Wed &amp; Fri</span><span>7:30 AM – 3:00 PM</span></li>
+        <li><span>Every Other Sat</span><span>7:30 AM – 2:00 PM</span></li>
+        <li><span>Sunday</span><span>Closed</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-banner-eyebrow">Begin Your Journey</div>
+  <h2 class="cta-banner-title">Let's Create Your<br><em>Ideal Smile</em></h2>
+  <p class="cta-banner-sub">Schedule your consultation with one of our exceptional doctors today and take the first step toward the smile you've always imagined.</p>
+  <div class="cta-actions">
+    <a class="btn-primary" href="#">Book an Appointment</a>
+    <a class="btn-ghost" href="#">Download New Patient Forms</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Ideal Dental Solutions</div>
+      <div class="footer-brand-sub">Northern Virginia</div>
+      <p class="footer-tagline">Setting the standard in dental excellence across McLean and Arlington, Virginia.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#">Cosmetic Dentistry</a></li>
+        <li><a href="#">Dental Implants</a></li>
+        <li><a href="#">Periodontics</a></li>
+        <li><a href="#">Restorative Dentistry</a></li>
+        <li><a href="#">Preventive Care</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Patient Resources</div>
+      <ul class="footer-links">
+        <li><a href="#">New Patient Form</a></li>
+        <li><a href="#">Notice of Privacy Practices</a></li>
+        <li><a href="#">Payment &amp; Insurance</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Locations</div>
+      <ul class="footer-links">
+        <li><a href="#">McLean — (703) 442-0442</a></li>
+        <li><a href="#">Arlington — (703) 528-0800</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ideal Dental Solutions. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll style
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 40 ? 'rgba(249,246,241,0.97)' : 'rgba(249,246,241,0.92)';
+  });
+</script>
+</body>
+</html>

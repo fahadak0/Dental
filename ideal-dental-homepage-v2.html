@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideal Dental Solutions — #1 Dentists in Northern Virginia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ─────────────────────────────────────────
+     BRAND PALETTE  (sampled from IDS site)
+     Primary navy:   #1B3A5C
+     Teal accent:    #2A7E8F  (CTA / hover)
+     Teal light:     #3AADBE
+     White:          #FFFFFF
+     Off-white bg:   #F5F8FA
+     Text body:      #3D4F5E
+     Border:         #D6E3EC
+  ───────────────────────────────────────── */
+  :root {
+    --navy:       #1B3A5C;
+    --navy-deep:  #112740;
+    --teal:       #2A7E8F;
+    --teal-light: #3AADBE;
+    --teal-pale:  #EAF6F8;
+    --white:      #FFFFFF;
+    --off-white:  #F5F8FA;
+    --body:       #3D4F5E;
+    --muted:      #7A8E9B;
+    --border:     #D6E3EC;
+    --gold:       #C4A355; /* subtle warm accent for luxury feel */
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--white);
+    color: var(--body);
+    overflow-x: hidden;
+  }
+
+  /* ── UTILITY ── */
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 60px; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 18px;
+  }
+  .section-tag::before { content: ''; display: block; width: 28px; height: 2px; background: var(--teal); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 58px); font-weight: 400; line-height: 1.1;
+    color: var(--navy);
+  }
+  .section-title em { font-style: italic; color: var(--teal); }
+  .section-title.light { color: var(--white); }
+  .section-title.light em { color: var(--teal-light); }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+    padding: 16px 36px; background: var(--teal); color: var(--white);
+    text-decoration: none; border: 2px solid var(--teal);
+    transition: all 0.3s; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--navy); border-color: var(--navy); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,58,92,0.25); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+    padding: 16px 36px; background: transparent; color: var(--white);
+    text-decoration: none; border: 2px solid rgba(255,255,255,0.5);
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+  .btn-outline-navy {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;
+    padding: 14px 32px; background: transparent; color: var(--navy);
+    text-decoration: none; border: 2px solid var(--navy);
+    transition: all 0.3s;
+  }
+  .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
+
+  /* ──────────────── NAV ──────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 24px rgba(27,58,92,0.12); }
+  .nav-inner {
+    display: flex; align-items: stretch; justify-content: space-between;
+    height: 80px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; padding: 0 0 0 0;
+  }
+  .nav-logo img { height: 44px; width: auto; }
+  .nav-logo-fallback {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 500; color: var(--navy); line-height: 1.1;
+  }
+  .nav-logo-fallback span { display: block; font-family: 'Nunito Sans', sans-serif; font-size: 9px; letter-spacing: 0.3em; font-weight: 700; text-transform: uppercase; color: var(--teal); margin-top: 2px; }
+  .nav-links { display: flex; align-items: stretch; list-style: none; gap: 0; }
+  .nav-links > li { position: relative; display: flex; align-items: center; }
+  .nav-links > li > a {
+    display: flex; align-items: center; padding: 0 20px; height: 100%;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+    color: var(--navy); text-decoration: none; transition: color 0.2s;
+    border-bottom: 3px solid transparent; transition: border-color 0.2s, color 0.2s;
+  }
+  .nav-links > li > a:hover, .nav-links > li > a.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+  /* Dropdown */
+  .dropdown { position: relative; }
+  .dropdown-menu {
+    display: none; position: absolute; top: 100%; left: 0;
+    background: var(--white); border: 1px solid var(--border);
+    min-width: 220px; box-shadow: 0 16px 40px rgba(27,58,92,0.15);
+    z-index: 300;
+  }
+  .dropdown:hover .dropdown-menu { display: block; }
+  .dropdown-menu a {
+    display: block; padding: 12px 20px;
+    font-size: 12px; color: var(--body); text-decoration: none;
+    border-bottom: 1px solid var(--border); transition: background 0.2s, color 0.2s;
+  }
+  .dropdown-menu a:last-child { border-bottom: none; }
+  .dropdown-menu a:hover { background: var(--teal-pale); color: var(--teal); }
+  .dropdown > a::after { content: ' ▾'; font-size: 9px; }
+
+  .nav-right { display: flex; align-items: center; gap: 16px; padding: 0 0 0 24px; border-left: 1px solid var(--border); }
+  .nav-phones { display: flex; flex-direction: column; gap: 2px; }
+  .nav-phone-link { font-size: 11px; color: var(--navy); text-decoration: none; font-weight: 600; line-height: 1.4; }
+  .nav-phone-link:hover { color: var(--teal); }
+  .nav-phone-link small { font-size: 9px; font-weight: 400; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; }
+  .nav-cta {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;
+    padding: 10px 22px; background: var(--teal); color: var(--white);
+    text-decoration: none; border: 2px solid var(--teal); transition: all 0.3s; white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--navy); border-color: var(--navy); }
+
+  /* ──────────────── HERO ──────────────── */
+  .hero {
+    margin-top: 80px; /* nav height */
+    position: relative; min-height: calc(100vh - 80px);
+    background: var(--navy-deep); overflow: hidden;
+    display: flex; align-items: center;
+  }
+  /* Video background */
+  .hero-video-wrap {
+    position: absolute; inset: 0; z-index: 1;
+  }
+  .hero-video-wrap iframe,
+  .hero-video-wrap video {
+    width: 100%; height: 100%;
+    object-fit: cover; pointer-events: none;
+  }
+  /* YouTube embed trick for cover sizing */
+  .hero-video-yt {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vw + 200px); height: calc(100vh + 200px);
+    pointer-events: none; z-index: 1;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0; z-index: 2;
+    background: linear-gradient(
+      105deg,
+      rgba(17,39,64,0.88) 0%,
+      rgba(17,39,64,0.65) 55%,
+      rgba(17,39,64,0.35) 100%
+    );
+  }
+  .hero-content {
+    position: relative; z-index: 3;
+    padding: 80px 60px;
+    max-width: 760px;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 700;
+    color: var(--teal-light); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 36px; height: 2px; background: var(--teal-light); }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 7vw, 96px); font-weight: 400; line-height: 1;
+    color: var(--white); margin-bottom: 28px;
+  }
+  .hero h1 em { font-style: italic; color: var(--teal-light); }
+  .hero-sub {
+    font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.7);
+    max-width: 520px; margin-bottom: 52px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+  /* Video play button badge */
+  .hero-video-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 12px 24px; border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 600; cursor: pointer;
+    background: rgba(255,255,255,0.08); backdrop-filter: blur(4px);
+    transition: all 0.3s; text-decoration: none;
+  }
+  .hero-video-badge:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.6); color: var(--white); }
+  .play-icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--teal); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .play-icon svg { width: 12px; height: 12px; fill: white; margin-left: 2px; }
+
+  /* Location pills on hero */
+  .hero-locations-bar {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 4;
+    display: flex;
+  }
+  .hero-loc-pill {
+    flex: 1; background: rgba(255,255,255,0.08); backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding: 24px 40px; display: flex; align-items: center; gap: 20px;
+    text-decoration: none; transition: background 0.3s;
+  }
+  .hero-loc-pill:first-child { border-right: 1px solid rgba(255,255,255,0.12); }
+  .hero-loc-pill:hover { background: rgba(42,126,143,0.25); }
+  .hlp-pin { font-size: 22px; color: var(--teal-light); }
+  .hlp-info {}
+  .hlp-label { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700; color: var(--teal-light); margin-bottom: 4px; }
+  .hlp-city { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--white); margin-bottom: 2px; }
+  .hlp-phone { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 600; letter-spacing: 0.05em; }
+  .hlp-btn {
+    margin-left: auto; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 700; padding: 10px 20px; border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7); transition: all 0.3s;
+  }
+  .hero-loc-pill:hover .hlp-btn { border-color: var(--teal-light); color: var(--teal-light); }
+
+  /* ── MARQUEE ── */
+  .marquee-strip {
+    background: var(--teal); padding: 14px 0; overflow: hidden;
+  }
+  .marquee-track {
+    display: flex; gap: 0; animation: marquee 35s linear infinite; white-space: nowrap;
+  }
+  .marquee-track .item {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700;
+    color: rgba(255,255,255,0.85); padding: 0 28px;
+    border-right: 1px solid rgba(255,255,255,0.25);
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── SERVICES ── */
+  .services { background: var(--off-white); padding: 120px 0; }
+  .services .container {}
+  .services-header {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end;
+    margin-bottom: 64px;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+    background: var(--border);
+  }
+  .service-card {
+    background: var(--white); padding: 44px 28px 36px;
+    text-decoration: none; color: inherit; display: block;
+    position: relative; overflow: hidden;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: var(--teal); transform: scaleX(0); transition: transform 0.3s;
+    transform-origin: left;
+  }
+  .service-card:hover { background: var(--navy); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(27,58,92,0.2); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover .sc-num { color: var(--teal-light); }
+  .service-card:hover .sc-title { color: var(--white); }
+  .service-card:hover .sc-body { color: rgba(255,255,255,0.65); }
+  .service-card:hover .sc-arrow { color: var(--teal-light); border-color: rgba(255,255,255,0.2); }
+  .sc-num {
+    font-size: 11px; letter-spacing: 0.2em; font-weight: 700; color: var(--teal);
+    margin-bottom: 28px; transition: color 0.3s;
+  }
+  .sc-icon-wrap {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--teal-pale); display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px; transition: background 0.3s;
+    font-size: 22px;
+  }
+  .service-card:hover .sc-icon-wrap { background: rgba(42,126,143,0.25); }
+  .sc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; color: var(--navy); line-height: 1.2;
+    margin-bottom: 14px; transition: color 0.3s;
+  }
+  .sc-body { font-size: 12px; line-height: 1.8; color: var(--body); margin-bottom: 28px; transition: color 0.3s; }
+  .sc-arrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700;
+    color: var(--teal); border-bottom: 1px solid var(--border); padding-bottom: 4px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+
+  /* ── ABOUT / VIDEO FEATURE ── */
+  .about-video { background: var(--white); padding: 120px 0; }
+  .av-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .av-video-wrap {
+    position: relative; border-radius: 2px; overflow: hidden;
+    box-shadow: 0 24px 80px rgba(27,58,92,0.18);
+    aspect-ratio: 16/9;
+    background: var(--navy-deep);
+  }
+  .av-video-wrap iframe { width: 100%; height: 100%; display: block; border: none; }
+  .av-video-placeholder {
+    width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 20px; background: var(--navy);
+    cursor: pointer; position: relative;
+  }
+  .av-play-btn {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--teal); display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 0 12px rgba(58,173,190,0.2);
+  }
+  .av-play-btn:hover { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(58,173,190,0.15); }
+  .av-play-btn svg { width: 24px; height: 24px; fill: white; margin-left: 4px; }
+  .av-play-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 600; }
+  .av-text {}
+  .av-text .section-tag { margin-bottom: 16px; }
+  .av-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 3.5vw, 50px); font-weight: 400; color: var(--navy); line-height: 1.1; margin-bottom: 24px; }
+  .av-title em { font-style: italic; color: var(--teal); }
+  .av-body { font-size: 14px; line-height: 1.9; color: var(--body); margin-bottom: 16px; }
+  .av-body strong { color: var(--navy); font-weight: 700; }
+  .av-stats { display: flex; gap: 40px; margin: 40px 0; padding: 32px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .av-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 400; color: var(--teal); line-height: 1; margin-bottom: 6px; }
+  .av-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; color: var(--muted); }
+
+  /* ── COSMETIC TREATMENTS ── */
+  .cosmetic { background: var(--navy); padding: 120px 0; }
+  .cosmetic .section-tag { color: var(--teal-light); }
+  .cosmetic .section-tag::before { background: var(--teal-light); }
+  .cosmetic-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 40px; }
+  .cosmetic-header p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.55); max-width: 380px; }
+  .cosmetic-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); }
+  .cosmetic-card {
+    background: rgba(255,255,255,0.04); position: relative; overflow: hidden;
+    text-decoration: none; color: inherit; display: block;
+    transition: background 0.3s;
+  }
+  .cosmetic-card:hover { background: rgba(42,126,143,0.2); }
+  .cosmetic-img {
+    aspect-ratio: 3/4; overflow: hidden;
+    position: relative;
+  }
+  .cosmetic-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .cosmetic-card:hover .cosmetic-img img { transform: scale(1.04); }
+  .cosmetic-img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--navy-deep) 0%, #1e4a6e 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cosmetic-img-placeholder span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px; font-weight: 300; color: rgba(58,173,190,0.2);
+  }
+  .cosmetic-info { padding: 32px 28px; }
+  .cosmetic-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
+  .cosmetic-body { font-size: 12px; line-height: 1.8; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+  .cosmetic-link { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--teal-light); }
+
+  /* ── DOCTORS ── */
+  .doctors { background: var(--off-white); padding: 120px 0; }
+  .doctors-header { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 64px; }
+  .doctors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .doc-card { background: var(--white); overflow: hidden; }
+  .doc-img { aspect-ratio: 3/4; overflow: hidden; position: relative; background: var(--navy); }
+  .doc-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.5s; }
+  .doc-card:hover .doc-img img { transform: scale(1.04); }
+  .doc-img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #2a4d6e 0%, var(--navy-deep) 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .doc-img-placeholder span { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: rgba(58,173,190,0.3); }
+  .doc-info { padding: 36px; border-top: 4px solid var(--teal); }
+  .doc-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+  .doc-cred { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--teal); margin-bottom: 18px; }
+  .doc-bio { font-size: 13px; line-height: 1.85; color: var(--body); }
+  .doc-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+  .doc-link:hover { color: var(--teal); }
+  .doc-link::after { content: '→'; }
+
+  /* ── OFFICE GALLERY (animation images) ── */
+  .gallery { background: var(--navy); padding: 80px 0 0; overflow: hidden; }
+  .gallery-inner { display: flex; gap: 2px; }
+  .gallery-img { flex: 1; aspect-ratio: 4/3; overflow: hidden; }
+  .gallery-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; filter: brightness(0.85); }
+  .gallery-img:hover img { transform: scale(1.05); filter: brightness(1); }
+
+  /* ── WHY IDS ── */
+  .why-ids { background: var(--white); padding: 120px 0; }
+  .why-header { text-align: center; max-width: 680px; margin: 0 auto 64px; }
+  .why-header .section-tag { justify-content: center; }
+  .why-header .section-tag::before { display: none; }
+  .why-header .section-tag::after { content: ''; display: block; width: 28px; height: 2px; background: var(--teal); }
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .pillar {
+    background: var(--white); padding: 52px 40px;
+    position: relative; overflow: hidden; transition: background 0.3s;
+  }
+  .pillar::after { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--teal); opacity: 0; transition: opacity 0.3s; }
+  .pillar:hover { background: var(--teal-pale); }
+  .pillar:hover::after { opacity: 1; }
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300;
+    color: var(--border); line-height: 1; margin-bottom: 24px;
+    user-select: none;
+  }
+  .pillar-icon { font-size: 32px; margin-bottom: 20px; }
+  .pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--navy); margin-bottom: 14px; }
+  .pillar-body { font-size: 13px; line-height: 1.85; color: var(--body); }
+
+  /* ── BEFORE & AFTER ── */
+  .before-after { background: var(--off-white); padding: 120px 0; }
+  .ba-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 40px; }
+  .ba-header p { font-size: 14px; line-height: 1.8; color: var(--body); max-width: 380px; }
+  .ba-slider-wrap { position: relative; overflow: hidden; }
+  .ba-track { display: flex; gap: 1px; background: var(--border); }
+  .ba-item {
+    flex: 0 0 calc(33.333% - 1px); background: var(--white);
+    overflow: hidden;
+  }
+  .ba-pair { display: grid; grid-template-columns: 1fr 1fr; }
+  .ba-side { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--navy); }
+  .ba-side-label {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 700;
+    padding: 4px 10px; background: rgba(27,58,92,0.8); color: var(--white); z-index: 2;
+  }
+  .ba-side.after .ba-side-label { background: var(--teal); }
+  .ba-side-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .ba-side.before .ba-side-placeholder { background: linear-gradient(135deg, #2d3d4e 0%, #1a2b3c 100%); }
+  .ba-side.after .ba-side-placeholder { background: linear-gradient(135deg, #1e4a6e 0%, var(--teal) 100%); }
+  .ba-caption { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .ba-caption-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: var(--navy); }
+  .ba-caption-link { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: var(--teal); text-decoration: none; }
+  .view-all-center { text-align: center; margin-top: 48px; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--navy); padding: 120px 0; }
+  .test-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+  .test-header .section-tag { justify-content: center; color: var(--teal-light); }
+  .test-header .section-tag::before, .test-header .section-tag::after { background: var(--teal-light); }
+  .test-header .section-tag::before { display: block; }
+  .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); }
+  .test-card { background: rgba(255,255,255,0.04); padding: 44px 36px; }
+  .test-stars { color: var(--gold); font-size: 16px; letter-spacing: 3px; margin-bottom: 20px; }
+  .test-quote { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 28px; font-style: italic; }
+  .test-author { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: var(--teal-light); }
+  .test-location { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+
+  /* ── LOCATIONS ── */
+  .locations { background: var(--white); padding: 120px 0; }
+  .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 64px; }
+  .loc-card { background: var(--white); padding: 60px; position: relative; overflow: hidden; }
+  .loc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--teal); }
+  .loc-badge { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700; color: var(--teal); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .loc-badge::before { content: ''; display: block; width: 20px; height: 2px; background: var(--teal); }
+  .loc-city { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 400; color: var(--navy); margin-bottom: 6px; line-height: 1; }
+  .loc-addr { font-size: 14px; line-height: 1.7; color: var(--body); margin-bottom: 24px; }
+  .loc-phone-link { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: var(--navy); text-decoration: none; display: block; margin-bottom: 32px; transition: color 0.2s; }
+  .loc-phone-link:hover { color: var(--teal); }
+  .hours-head { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-bottom: 14px; }
+  .hours-rows { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .hours-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row span:first-child { color: var(--navy); font-weight: 600; }
+  .hours-row span:last-child { color: var(--muted); }
+  .loc-cta { margin-top: 32px; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--teal); padding: 100px 60px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 60%);
+  }
+  .cta-banner .eyebrow {
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 700;
+    color: rgba(255,255,255,0.7); margin-bottom: 20px;
+  }
+  .cta-banner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 6vw, 76px); font-weight: 400; color: var(--white);
+    margin-bottom: 20px; line-height: 1.05; position: relative;
+  }
+  .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 48px; line-height: 1.8; }
+  .cta-banner .btn-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+    padding: 16px 40px; background: var(--white); color: var(--teal);
+    text-decoration: none; border: 2px solid var(--white); transition: all 0.3s;
+  }
+  .cta-banner .btn-white:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+  .cta-banner .btn-white-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+    padding: 16px 40px; background: transparent; color: var(--white);
+    text-decoration: none; border: 2px solid rgba(255,255,255,0.5); transition: all 0.3s;
+  }
+  .cta-banner .btn-white-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--navy-deep); padding: 80px 60px 40px; }
+  .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+  .footer-logo { margin-bottom: 20px; }
+  .footer-logo img { height: 40px; filter: brightness(0) invert(1); }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 4px; }
+  .footer-brand-sub { font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; font-weight: 700; color: var(--teal-light); margin-bottom: 20px; }
+  .footer-tagline { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.4); max-width: 280px; }
+  .footer-col-title { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.4); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+  .footer-legal { display: flex; gap: 20px; }
+  .footer-legal a { font-size: 12px; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: var(--teal-light); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; }
+  .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+  .d5 { transition-delay: 0.5s; }
+
+  /* ── VIDEO MODAL ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-inner { position: relative; width: 90vw; max-width: 1000px; }
+  .modal-inner iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+  .modal-close {
+    position: absolute; top: -48px; right: 0;
+    font-size: 28px; color: white; cursor: pointer; background: none; border: none;
+    font-family: 'Nunito Sans', sans-serif; line-height: 1;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .cosmetic-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-phones { display: none; }
+  }
+  @media (max-width: 768px) {
+    .container { padding: 0 24px; }
+    .nav-inner { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 60px 24px 140px; }
+    .hero-locations-bar { flex-direction: column; }
+    .hero-loc-pill:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .av-grid, .doctors-header, .services-header, .ba-header { grid-template-columns: 1fr; }
+    .doctors-grid { grid-template-columns: 1fr; }
+    .cosmetic-grid { grid-template-columns: 1fr; }
+    .ba-track { flex-direction: column; }
+    .ba-item { flex: none; }
+    .test-grid { grid-template-columns: 1fr; }
+    .loc-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .gallery-inner { flex-wrap: wrap; }
+    .gallery-img { flex: 0 0 calc(50% - 1px); }
+    .cta-banner { padding: 80px 24px; }
+    footer { padding: 60px 24px 32px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .cosmetic-header { flex-direction: column; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="nav-logo" href="https://idealdentalsolutions.com/">
+        <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/ids-logo-home-menu.png"
+             alt="Ideal Dental Solutions"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="nav-logo-fallback" style="display:none">
+          Ideal Dental Solutions<span>Northern Virginia</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="https://idealdentalsolutions.com/about/">About Us</a></li>
+        <li class="dropdown">
+          <a href="https://idealdentalsolutions.com/services/">Services</a>
+          <div class="dropdown-menu">
+            <a href="https://idealdentalsolutions.com/services/cosmetic-dentistry/">Cosmetic Dentistry</a>
+            <a href="https://idealdentalsolutions.com/services/dental-implant-dentistry/">Dental Implants</a>
+            <a href="https://idealdentalsolutions.com/services/periodontal-dentistry/">Periodontics</a>
+            <a href="https://idealdentalsolutions.com/services/preventive-dentistry/">Preventive Dentistry</a>
+            <a href="https://idealdentalsolutions.com/services/restorative-dentistry/">Restorative Dentistry</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Patient Resources</a>
+          <div class="dropdown-menu">
+            <a href="https://idealdentalsolutions.com/wp-content/uploads/2024/09/IDS-Patient-Package-201508.pdf">New Patient Form</a>
+            <a href="https://idealdentalsolutions.com/wp-content/uploads/2026/01/NPP-2026-1.pdf">Notice of Privacy Practices</a>
+            <a href="https://idealdentalsolutions.com/payment-plans-pricing/">Payment &amp; Insurance</a>
+            <a href="https://idealdentalsolutions.com/blog/">Blog</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-phones">
+          <a class="nav-phone-link" href="tel:7034420442">
+            <small>McLean</small>(703) 442-0442
+          </a>
+          <a class="nav-phone-link" href="tel:7035280800">
+            <small>Arlington</small>(703) 528-0800
+          </a>
+        </div>
+        <a class="nav-cta" href="#">Schedule Appointment</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <!-- Video background -->
+  <div class="hero-video-wrap">
+    <!-- Embed the site's existing YouTube video as background -->
+    <iframe
+      class="hero-video-yt"
+      src="https://www.youtube.com/embed/videoseries?list=PLkGnbN5pFpLe0NkGTU-s4pP_0p6hFlnGG&autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&enablejsapi=1"
+      title="Ideal Dental Solutions"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Northern Virginia's Premier Dental Care</div>
+    <h1>Trusted Dentists<br>in <em>Northern Virginia</em></h1>
+    <p class="hero-sub">At Ideal Dental Solutions, our team of dental experts works together on every patient case, leveraging over 50 years of combined expertise to create a customized treatment plan specifically for you.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#">Schedule an Appointment</a>
+      <button class="hero-video-badge" onclick="openModal()">
+        <div class="play-icon">
+          <svg viewBox="0 0 16 16"><polygon points="3,1 14,8 3,15"/></svg>
+        </div>
+        Watch Our Story
+      </button>
+    </div>
+  </div>
+  <!-- Location Bar -->
+  <div class="hero-locations-bar">
+    <a class="hero-loc-pill" href="https://idealdentalsolutions.com/locations/mclean/cosmetic-dentistry/">
+      <div class="hlp-pin">📍</div>
+      <div class="hlp-info">
+        <div class="hlp-label">Location 01</div>
+        <div class="hlp-city">McLean, VA</div>
+        <div class="hlp-phone">(703) 442-0442</div>
+      </div>
+      <div class="hlp-btn">Book Appointment</div>
+    </a>
+    <a class="hero-loc-pill" href="https://idealdentalsolutions.com/locations/arlington/cosmetic-dentistry/">
+      <div class="hlp-pin">📍</div>
+      <div class="hlp-info">
+        <div class="hlp-label">Location 02</div>
+        <div class="hlp-city">Arlington, VA</div>
+        <div class="hlp-phone">(703) 528-0800</div>
+      </div>
+      <div class="hlp-btn">Book Appointment</div>
+    </a>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="item">Cosmetic Dentistry</span><span class="item">Dental Implants</span>
+    <span class="item">Porcelain Veneers</span><span class="item">Teeth Whitening</span>
+    <span class="item">Invisalign</span><span class="item">Periodontics</span>
+    <span class="item">Restorative Dentistry</span><span class="item">Preventive Care</span>
+    <span class="item">TMJ Treatments</span><span class="item">Dental Bonding</span>
+    <span class="item">Root Canal Therapy</span><span class="item">Full Arch Implants</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="item">Cosmetic Dentistry</span><span class="item">Dental Implants</span>
+    <span class="item">Porcelain Veneers</span><span class="item">Teeth Whitening</span>
+    <span class="item">Invisalign</span><span class="item">Periodontics</span>
+    <span class="item">Restorative Dentistry</span><span class="item">Preventive Care</span>
+    <span class="item">TMJ Treatments</span><span class="item">Dental Bonding</span>
+    <span class="item">Root Canal Therapy</span><span class="item">Full Arch Implants</span>
+  </div>
+</div>
+
+<!-- ══ SERVICES ══ -->
+<section class="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="reveal">
+        <div class="section-tag">Our Expertise</div>
+        <h2 class="section-title">Meeting All Your<br><em>Dental Needs</em></h2>
+      </div>
+      <p class="reveal d1" style="font-size:14px;line-height:1.85;color:var(--body);padding-top:12px;">Our comprehensive range of dental services ensures every member of your family receives expert care under one roof — from routine prevention to complex cosmetic transformations.</p>
+    </div>
+    <div class="services-grid">
+      <a class="service-card reveal" href="https://idealdentalsolutions.com/services/preventive-dentistry/">
+        <div class="sc-num">01</div>
+        <div class="sc-icon-wrap">🦷</div>
+        <div class="sc-title">Preventive Dentistry</div>
+        <p class="sc-body">Maintain optimal oral health with routine check-ups, cleanings, and preventive treatments that keep your smile healthy for life.</p>
+        <div class="sc-arrow">Learn More →</div>
+      </a>
+      <a class="service-card reveal d1" href="https://idealdentalsolutions.com/services/restorative-dentistry/">
+        <div class="sc-num">02</div>
+        <div class="sc-icon-wrap">🔧</div>
+        <div class="sc-title">Restorative Dentistry</div>
+        <p class="sc-body">Restore function and appearance with fillings, crowns, bridges, dentures, and comprehensive repairs to rebuild your smile.</p>
+        <div class="sc-arrow">Learn More →</div>
+      </a>
+      <a class="service-card reveal d2" href="https://idealdentalsolutions.com/services/dental-implant-dentistry/">
+        <div class="sc-num">03</div>
+        <div class="sc-icon-wrap">⚙️</div>
+        <div class="sc-title">Dental Implants</div>
+        <p class="sc-body">Replace missing teeth with durable, natural-looking implants — from single tooth to full arch reconstructions.</p>
+        <div class="sc-arrow">Learn More →</div>
+      </a>
+      <a class="service-card reveal d3" href="https://idealdentalsolutions.com/services/cosmetic-dentistry/">
+        <div class="sc-num">04</div>
+        <div class="sc-icon-wrap">✨</div>
+        <div class="sc-title">Cosmetic Dentistry</div>
+        <p class="sc-body">Transform your smile with whitening, veneers, bonding, Invisalign, and complete smile makeovers.</p>
+        <div class="sc-arrow">Learn More →</div>
+      </a>
+      <a class="service-card reveal d4" href="https://idealdentalsolutions.com/services/periodontal-dentistry/">
+        <div class="sc-num">05</div>
+        <div class="sc-icon-wrap">❤️</div>
+        <div class="sc-title">Periodontal Dentistry</div>
+        <p class="sc-body">Protect your gum health with laser therapy, gum disease treatment, gum grafts, and crown lengthening.</p>
+        <div class="sc-arrow">Learn More →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VIDEO FEATURE / ABOUT ══ -->
+<section class="about-video">
+  <div class="container">
+    <div class="av-grid">
+      <!-- Video embed -->
+      <div class="av-video-wrap reveal">
+        <div class="av-video-placeholder" onclick="openModal()" id="video-thumb">
+          <!-- Thumbnail from YouTube if video ID known, or placeholder -->
+          <div class="av-play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 20,12 5,21"/></svg>
+          </div>
+          <div class="av-play-label">Watch Our Practice Video</div>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#112740 0%,#1e4a6e 100%);z-index:-1;"></div>
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="av-text reveal d1">
+        <div class="section-tag">About Ideal Dental Solutions</div>
+        <h2 class="av-title">Setting the Standards in<br><em>Dental Excellence</em></h2>
+        <p class="av-body"><strong>Looking for dentists near you?</strong> At Ideal Dental Solutions, our team of dental experts works together on every patient case, leveraging our collective knowledge and experience to create a customized treatment plan specifically for you.</p>
+        <p class="av-body">Experience a higher standard of dental care in a friendly environment with state-of-the-art technology at our McLean and Arlington offices.</p>
+        <div class="av-stats">
+          <div>
+            <div class="av-stat-num">50+</div>
+            <div class="av-stat-label">Years Combined<br>Experience</div>
+          </div>
+          <div>
+            <div class="av-stat-num">3</div>
+            <div class="av-stat-label">Expert<br>Doctors</div>
+          </div>
+          <div>
+            <div class="av-stat-num">2</div>
+            <div class="av-stat-label">Convenient<br>Locations</div>
+          </div>
+        </div>
+        <a class="btn-outline-navy" href="https://idealdentalsolutions.com/about/">Meet Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURED COSMETIC ══ -->
+<section class="cosmetic">
+  <div class="container">
+    <div class="cosmetic-header">
+      <div class="reveal">
+        <div class="section-tag" style="color:var(--teal-light)">Featured Treatments</div>
+        <h2 class="section-title light">Our Featured Cosmetic<br><em>Dentistry Solutions</em></h2>
+      </div>
+      <p class="reveal d1">Transform your smile with our advanced cosmetic dental treatments — each one crafted with precision and artistry to enhance your natural beauty.</p>
+    </div>
+    <div class="cosmetic-grid">
+      <a class="cosmetic-card reveal" href="https://idealdentalsolutions.com/services/cosmetic-dentistry/dental-veneers/porcelain-veneers/">
+        <div class="cosmetic-img">
+          <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/09/porcelain-veneers-image.webp"
+               alt="Porcelain Veneers"
+               onerror="this.parentNode.innerHTML='<div class=cosmetic-img-placeholder><span>V</span></div>'">
+        </div>
+        <div class="cosmetic-info">
+          <div class="cosmetic-title">Porcelain Veneers</div>
+          <p class="cosmetic-body">Achieve a flawless smile with custom-made veneers correcting chips, gaps, and discoloration.</p>
+          <div class="cosmetic-link">Explore →</div>
+        </div>
+      </a>
+      <a class="cosmetic-card reveal d1" href="https://idealdentalsolutions.com/services/cosmetic-dentistry/teeth-whitening/">
+        <div class="cosmetic-img">
+          <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/09/teeth-whitening-image.webp"
+               alt="Teeth Whitening"
+               onerror="this.parentNode.innerHTML='<div class=cosmetic-img-placeholder><span>W</span></div>'">
+        </div>
+        <div class="cosmetic-info">
+          <div class="cosmetic-title">Teeth Whitening</div>
+          <p class="cosmetic-body">Professional in-office and take-home treatments to effectively remove stains and brighten your smile.</p>
+          <div class="cosmetic-link">Explore →</div>
+        </div>
+      </a>
+      <a class="cosmetic-card reveal d2" href="https://idealdentalsolutions.com/services/cosmetic-dentistry/dental-bonding/">
+        <div class="cosmetic-img">
+          <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/09/dental-bonding-image.webp"
+               alt="Dental Bonding"
+               onerror="this.parentNode.innerHTML='<div class=cosmetic-img-placeholder><span>B</span></div>'">
+        </div>
+        <div class="cosmetic-info">
+          <div class="cosmetic-title">Dental Bonding</div>
+          <p class="cosmetic-body">Repair chips, cracks, and discoloration using tooth-colored resin that blends seamlessly with your smile.</p>
+          <div class="cosmetic-link">Explore →</div>
+        </div>
+      </a>
+      <a class="cosmetic-card reveal d3" href="https://idealdentalsolutions.com/services/cosmetic-dentistry/invisalign/">
+        <div class="cosmetic-img">
+          <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/09/invisalign-image.webp"
+               alt="Invisalign"
+               onerror="this.parentNode.innerHTML='<div class=cosmetic-img-placeholder><span>I</span></div>'">
+        </div>
+        <div class="cosmetic-info">
+          <div class="cosmetic-title">Invisalign</div>
+          <p class="cosmetic-body">Straighten your teeth discreetly with virtually invisible aligners — a comfortable alternative to braces.</p>
+          <div class="cosmetic-link">Explore →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOCTORS ══ -->
+<section class="doctors">
+  <div class="container">
+    <div class="doctors-header">
+      <div class="reveal">
+        <div class="section-tag">Our Doctors</div>
+        <h2 class="section-title">Meet Our<br><em>Amazing Doctors</em></h2>
+      </div>
+      <p class="reveal d1" style="font-size:14px;line-height:1.85;color:var(--body);padding-top:12px;">Our distinguished team brings international training, decades of experience, and genuine passion for transforming lives through exceptional dental care.</p>
+    </div>
+    <div class="doctors-grid">
+      <div class="doc-card reveal">
+        <div class="doc-img">
+          <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/dr-adili.png"
+               alt="Dr. Mehdi Adili"
+               onerror="this.parentNode.innerHTML='<div class=doc-img-placeholder><span>A</span></div>'">
+        </div>
+        <div class="doc-info">
+          <div class="doc-name">Dr. Mehdi Adili</div>
+          <div class="doc-cred">DDS, Prosthodontics · Georgetown University</div>
+          <p class="doc-bio">Dr. Adili is a specialist in prosthodontics with over 30 years of clinical experience. He received his DDS from Georgetown University and completed advanced training in Restorative and TMJ Disorders, transforming challenging cosmetic problems into beautiful smiles.</p>
+          <a class="doc-link" href="https://idealdentalsolutions.com/about/#meet-our-team">Learn More</a>
+        </div>
+      </div>
+      <div class="doc-card reveal d1">
+        <div class="doc-img">
+          <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/dr-sephai.png"
+               alt="Dr. Saman Sepahi"
+               onerror="this.parentNode.innerHTML='<div class=doc-img-placeholder><span>S</span></div>'">
+        </div>
+        <div class="doc-info">
+          <div class="doc-name">Dr. Saman Sepahi</div>
+          <div class="doc-cred">DDS · Karolinska Institute, Sweden</div>
+          <p class="doc-bio">Dr. Sepahi received his DDS in 2008 from the Karolinska Institute in Stockholm, Sweden. In 2009, he co-founded Dentists Without Borders, setting up dental care projects across Africa, including Zimbabwe.</p>
+          <a class="doc-link" href="https://idealdentalsolutions.com/about/#meet-our-team">Learn More</a>
+        </div>
+      </div>
+      <div class="doc-card reveal d2">
+        <div class="doc-img">
+          <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/dr-hojaeva.png"
+               alt="Dr. Dilnoza Hojaeva"
+               onerror="this.parentNode.innerHTML='<div class=doc-img-placeholder><span>H</span></div>'">
+        </div>
+        <div class="doc-info">
+          <div class="doc-name">Dr. Dilnoza Hojaeva</div>
+          <div class="doc-cred">DDS · Virginia Commonwealth University</div>
+          <p class="doc-bio">Dr. Hojaeva earned her DDS through the Advanced Standing Program for Internationally Trained Dentists at VCU. She is dedicated to painless, anxiety-free dental care and is actively involved in community service projects.</p>
+          <a class="doc-link" href="https://idealdentalsolutions.com/about/#meet-our-team">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OFFICE GALLERY ══ -->
+<div class="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-img">
+      <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/image-animation-2.jpg" alt="Ideal Dental Office" loading="lazy">
+    </div>
+    <div class="gallery-img">
+      <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/image-animation-6.jpg" alt="Dental Care" loading="lazy">
+    </div>
+    <div class="gallery-img">
+      <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/image-animation-9.jpg" alt="Patient Care" loading="lazy">
+    </div>
+    <div class="gallery-img">
+      <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/image-animation-12.jpg" alt="Dental Treatment" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<!-- ══ WHY IDS ══ -->
+<section class="why-ids">
+  <div class="container">
+    <div class="why-header reveal">
+      <div class="section-tag" style="justify-content:center">Why Choose Us</div>
+      <h2 class="section-title" style="text-align:center">Setting the Standards in<br><em>Dental Excellence</em></h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-num">01</div>
+        <div class="pillar-icon">🏆</div>
+        <div class="pillar-title">50 Years of Combined Experience</div>
+        <p class="pillar-body">Our team of dental professionals brings over 50 years of combined experience, ensuring expert care and the best possible outcomes for your oral health.</p>
+      </div>
+      <div class="pillar reveal d1">
+        <div class="pillar-num">02</div>
+        <div class="pillar-icon">📍</div>
+        <div class="pillar-title">Two Convenient Locations</div>
+        <p class="pillar-body">We offer services at two convenient locations in Arlington (Clarendon) and McLean (Tysons), making it easy to access top-quality dental care.</p>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="pillar-num">03</div>
+        <div class="pillar-icon">😊</div>
+        <div class="pillar-title">Friendly &amp; Personable Approach</div>
+        <p class="pillar-body">Our friendly staff is dedicated to making every visit a positive experience. We take a personable approach ensuring you feel comfortable and informed.</p>
+      </div>
+      <div class="pillar reveal d3">
+        <div class="pillar-num">04</div>
+        <div class="pillar-icon">🏛️</div>
+        <div class="pillar-title">Beautiful Office Environment</div>
+        <p class="pillar-body">Enjoy your dental visits in our modern, beautifully designed offices — a relaxing and welcoming environment from the moment you walk through our doors.</p>
+      </div>
+      <div class="pillar reveal d4">
+        <div class="pillar-num">05</div>
+        <div class="pillar-icon">🔬</div>
+        <div class="pillar-title">Latest &amp; Most Advanced Technology</div>
+        <p class="pillar-body">We utilize the latest dental technology to provide precise, efficient, and effective treatments — ensuring the highest standard of care.</p>
+      </div>
+      <div class="pillar reveal d5">
+        <div class="pillar-num">06</div>
+        <div class="pillar-icon">💳</div>
+        <div class="pillar-title">Insurance Accepted</div>
+        <p class="pillar-body">We accept a wide range of insurance plans and our team helps you navigate your benefits to maximize coverage and minimize out-of-pocket costs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BEFORE & AFTER ══ -->
+<section class="before-after">
+  <div class="container">
+    <div class="ba-header">
+      <div class="reveal">
+        <div class="section-tag">Transformations</div>
+        <h2 class="section-title">Before &amp; After <em>Results</em></h2>
+      </div>
+      <p class="reveal d1">Witness real patient transformations that showcase the remarkable results of our treatments. Each image tells a story of renewed confidence and enhanced smiles.</p>
+    </div>
+    <div class="ba-slider-wrap">
+      <div class="ba-track">
+        <div class="ba-item reveal">
+          <div class="ba-pair">
+            <div class="ba-side before"><span class="ba-side-label">Before</span><div class="ba-side-placeholder"></div></div>
+            <div class="ba-side after"><span class="ba-side-label">After</span><div class="ba-side-placeholder"></div></div>
+          </div>
+          <div class="ba-caption"><span class="ba-caption-label">Case 01 · Veneers</span><a class="ba-caption-link" href="#">View →</a></div>
+        </div>
+        <div class="ba-item reveal d1">
+          <div class="ba-pair">
+            <div class="ba-side before"><span class="ba-side-label">Before</span><div class="ba-side-placeholder"></div></div>
+            <div class="ba-side after"><span class="ba-side-label">After</span><div class="ba-side-placeholder"></div></div>
+          </div>
+          <div class="ba-caption"><span class="ba-caption-label">Case 02 · Whitening</span><a class="ba-caption-link" href="#">View →</a></div>
+        </div>
+        <div class="ba-item reveal d2">
+          <div class="ba-pair">
+            <div class="ba-side before"><span class="ba-side-label">Before</span><div class="ba-side-placeholder"></div></div>
+            <div class="ba-side after"><span class="ba-side-label">After</span><div class="ba-side-placeholder"></div></div>
+          </div>
+          <div class="ba-caption"><span class="ba-caption-label">Case 03 · Full Smile</span><a class="ba-caption-link" href="#">View →</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="view-all-center reveal">
+      <a class="btn-outline-navy" href="#">View All Transformations</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials">
+  <div class="container">
+    <div class="test-header reveal">
+      <div class="section-tag" style="justify-content:center;color:var(--teal-light)">
+        Patient Reviews
+      </div>
+      <h2 class="section-title light" style="text-align:center">See Why Northern Virginia<br><em>Loves Us</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"The entire team at Ideal Dental Solutions is exceptional. Dr. Adili transformed my smile and I couldn't be happier with the results. Truly the best dental experience I've ever had."</p>
+        <div class="test-author">Sarah M.</div>
+        <div class="test-location">McLean, VA</div>
+      </div>
+      <div class="test-card reveal d1">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"Dr. Sepahi and his team are incredibly professional and caring. The state-of-the-art facility and the personalized attention made me feel completely at ease throughout my treatment."</p>
+        <div class="test-author">James T.</div>
+        <div class="test-location">Arlington, VA</div>
+      </div>
+      <div class="test-card reveal d2">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"I've been a patient for three years and the quality of care is consistently outstanding. Dr. Hojaeva is gentle, thorough, and takes the time to explain every step of your treatment."</p>
+        <div class="test-author">Maria L.</div>
+        <div class="test-location">Tysons, VA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCATIONS ══ -->
+<section class="locations">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto;">
+      <div class="section-tag" style="justify-content:center">Find Us</div>
+      <h2 class="section-title" style="text-align:center">Ideal Dental Solution's<br><em>Northern VA Dental Offices</em></h2>
+      <p style="font-size:14px;line-height:1.85;color:var(--body);margin-top:16px;">At Ideal Dental Solutions, our team of dental experts works together on every patient case, leveraging our collective knowledge to create a customized treatment plan specifically for you.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card reveal">
+        <div class="loc-badge">Location 01 — McLean, VA</div>
+        <div class="loc-city">McLean</div>
+        <p class="loc-addr">8280 Greensboro Drive, Unit 105<br>McLean, VA 22102</p>
+        <a class="loc-phone-link" href="tel:7034420442">(703) 442-0442</a>
+        <div class="hours-head">Office Hours</div>
+        <ul class="hours-rows">
+          <li class="hours-row"><span>Mon – Thu</span><span>9:00 AM – 5:00 PM</span></li>
+          <li class="hours-row"><span>Friday</span><span>8:30 AM – 3:00 PM</span></li>
+          <li class="hours-row"><span>Every Other Sat</span><span>8:00 AM – 2:00 PM</span></li>
+          <li class="hours-row"><span>Sunday</span><span>Closed</span></li>
+        </ul>
+        <div class="loc-cta"><a class="btn-primary" href="#">Book Appointment</a></div>
+      </div>
+      <div class="loc-card reveal d1">
+        <div class="loc-badge">Location 02 — Arlington, VA</div>
+        <div class="loc-city">Arlington</div>
+        <p class="loc-addr">1920 Clarendon Blvd.<br>Arlington, VA 22201</p>
+        <a class="loc-phone-link" href="tel:7035280800">(703) 528-0800</a>
+        <div class="hours-head">Office Hours</div>
+        <ul class="hours-rows">
+          <li class="hours-row"><span>Mon, Tue, Thu</span><span>12:00 PM – 7:30 PM</span></li>
+          <li class="hours-row"><span>Wed &amp; Fri</span><span>7:30 AM – 3:00 PM</span></li>
+          <li class="hours-row"><span>Every Other Sat</span><span>7:30 AM – 2:00 PM</span></li>
+          <li class="hours-row"><span>Sunday</span><span>Closed</span></li>
+        </ul>
+        <div class="loc-cta"><a class="btn-primary" href="#">Book Appointment</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BANNER ══ -->
+<section class="cta-banner">
+  <div class="eyebrow reveal">Begin Your Journey</div>
+  <h2 class="reveal d1">Let's Achieve Your Ideal Smile</h2>
+  <p class="reveal d2">Schedule your appointment with one of our amazing dentists or hygienists today and be closer to achieving the smile of your dreams!</p>
+  <div class="cta-actions reveal d3">
+    <a class="btn-white" href="#">Book Your Appointment</a>
+    <a class="btn-white-outline" href="https://idealdentalsolutions.com/wp-content/uploads/2024/09/IDS-Patient-Package-201508.pdf" target="_blank">New Patient Forms</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <img src="https://idealdentalsolutions.com/wp-content/uploads/2024/06/ids-logo-home-white.png"
+             alt="Ideal Dental Solutions"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="footer-brand" style="display:none">Ideal Dental Solutions</div>
+      </div>
+      <div class="footer-brand-sub">Northern Virginia</div>
+      <p class="footer-tagline">Setting the standards in dental excellence across McLean and Arlington, Virginia — where your smile is our top priority.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="https://idealdentalsolutions.com/services/cosmetic-dentistry/">Cosmetic Dentistry</a></li>
+        <li><a href="https://idealdentalsolutions.com/services/dental-implant-dentistry/">Dental Implants</a></li>
+        <li><a href="https://idealdentalsolutions.com/services/periodontal-dentistry/">Periodontics</a></li>
+        <li><a href="https://idealdentalsolutions.com/services/restorative-dentistry/">Restorative Dentistry</a></li>
+        <li><a href="https://idealdentalsolutions.com/services/preventive-dentistry/">Preventive Care</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Patient Resources</div>
+      <ul class="footer-links">
+        <li><a href="https://idealdentalsolutions.com/wp-content/uploads/2024/09/IDS-Patient-Package-201508.pdf">New Patient Form</a></li>
+        <li><a href="https://idealdentalsolutions.com/wp-content/uploads/2026/01/NPP-2026-1.pdf">Notice of Privacy Practices</a></li>
+        <li><a href="https://idealdentalsolutions.com/payment-plans-pricing/">Payment &amp; Insurance</a></li>
+        <li><a href="https://idealdentalsolutions.com/blog/">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:7034420442">McLean: (703) 442-0442</a></li>
+        <li><a href="#">8280 Greensboro Dr, Unit 105</a></li>
+        <li><a href="#">McLean, VA 22102</a></li>
+        <li style="margin-top:12px"><a href="tel:7035280800">Arlington: (703) 528-0800</a></li>
+        <li><a href="#">1920 Clarendon Blvd.</a></li>
+        <li><a href="#">Arlington, VA 22201</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">Copyright © 2026 Ideal Dental Solutions. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="https://idealdentalsolutions.com/blog/">Blog</a>
+      <a href="https://idealdentalsolutions.com/sitemap/">Sitemap</a>
+      <a href="https://idealdentalsolutions.com/terms-of-service/">Terms of Service</a>
+      <a href="https://idealdentalsolutions.com/privacy-policy/">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ VIDEO MODAL ══ -->
+<div class="modal-overlay" id="video-modal" onclick="closeModal(event)">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div id="modal-video-container"></div>
+  </div>
+</div>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Video modal — uses the practice's YouTube channel
+  // The video ID can be updated to match the specific video on the site
+  const VIDEO_ID = 'YOUR_VIDEO_ID_HERE'; // ← Replace with actual YouTube video ID from the site
+
+  function openModal() {
+    const modal = document.getElementById('video-modal');
+    const container = document.getElementById('modal-video-container');
+    // Try to use a real video ID if available, otherwise show a placeholder
+    if (VIDEO_ID && VIDEO_ID !== 'YOUR_VIDEO_ID_HERE') {
+      container.innerHTML = `<iframe src="https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0" 
+        style="width:100%;aspect-ratio:16/9;display:block;border:none;" 
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    } else {
+      container.innerHTML = `
+        <div style="background:var(--navy);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:32px;color:rgba(255,255,255,0.5);text-align:center;padding:40px;">
+            Add your YouTube Video ID to the script to embed your practice video here.
+          </div>
+          <p style="color:rgba(255,255,255,0.4);font-size:13px;text-align:center;">Visit your YouTube channel and copy the video ID from the URL.</p>
+        </div>`;
+    }
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(e) {
+    if (!e || e.target === document.getElementById('video-modal') || e.target.classList.contains('modal-close')) {
+      const modal = document.getElementById('video-modal');
+      document.getElementById('modal-video-container').innerHTML = '';
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
